@@ -2,7 +2,7 @@
 [PsychoPy] - issues that i ran into during designing experiments
 
 ### Issue#1 
-Horizontal shifting of TextStim, RatingScale, ImageStim etc. in newer version of psychopy (v3.2 onwards)
+Horizontal shifting of `TextStim`, `RatingScale`, `ImageStim` etc. in newer version of psychopy (v3.2 onwards)
 
 **Threads of people facing similar issues:** 
 - `pos` attribute of stimulus presentatin in psychopy is working differently. 
