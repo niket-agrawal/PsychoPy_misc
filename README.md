@@ -14,7 +14,7 @@ Horizontal shifting of `TextStim`, `RatingScale`, `ImageStim` etc. in newer vers
 
 The problem is due to the most recent version (v1.4 onwards) of package `pyglet`. It is dependency package for `PsychoPy`.
 
-**Solution - **
+**Solution-**
 
 Revert this `pyglet` package back to an older version - 
 - if you have **PsychoPy2**, `pip install pyglet == 1.2.4`
