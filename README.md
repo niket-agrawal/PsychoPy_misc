@@ -17,8 +17,8 @@ The problem is due to the most recent version (v1.4 onwards) of package `pyglet`
 **Solution-**
 
 Revert this `pyglet` package back to an older version - 
-- if you have **PsychoPy2**, `pip install pyglet == 1.2.4`
-- or if you use, **PsychoPy3**, `pip install pyglet == 1.3.2`
+- if you have **PsychoPy2**, `pip install pyglet==1.2.4`
+- or if you use, **PsychoPy3**, `pip install pyglet==1.3.2`
 
 This should solve the issue during stimuli presentation.
 
