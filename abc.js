@@ -1,6 +1,6 @@
-﻿/******************************* 
- * Pilotemotionconflictv2 Test *
- *******************************/
+﻿/***************************** 
+ * Pilotemotionconflict Test *
+ *****************************/
 
 import { PsychoJS } from './lib/core-2020.1.js';
 import * as core from './lib/core-2020.1.js';
@@ -24,7 +24,7 @@ psychoJS.openWindow({
 });
 
 // store info about the experiment session:
-let expName = 'pilotEmotionConflictV2';  // from the Builder filename that created this script
+let expName = 'pilotEmotionConflict';  // from the Builder filename that created this script
 let expInfo = {'participant': 'PEC_01', 'CB_order': '1'};
 
 // schedule the experiment:
@@ -2004,14 +2004,16 @@ function pract_trialsRoutineEachFrame(trials) {
       let theseKeys = pr_emo_resp.getKeys({keyList: ['left', 'right'], waitRelease: false});
       _pr_emo_resp_allKeys = _pr_emo_resp_allKeys.concat(theseKeys);
       if (_pr_emo_resp_allKeys.length > 0) {
-        pr_emo_resp.keys = _pr_emo_resp_allKeys[0].name;  // just the first key pressed
-        pr_emo_resp.rt = _pr_emo_resp_allKeys[0].rt;
+        pr_emo_resp.keys = _pr_emo_resp_allKeys[_pr_emo_resp_allKeys.length - 1].name;  // just the last key pressed
+        pr_emo_resp.rt = _pr_emo_resp_allKeys[_pr_emo_resp_allKeys.length - 1].rt;
         // was this correct?
         if (pr_emo_resp.keys == corrResp) {
             pr_emo_resp.corr = 1;
         } else {
             pr_emo_resp.corr = 0;
         }
+        // a response ends the routine
+        continueRoutine = false;
       }
     }
     
@@ -2063,6 +2065,7 @@ function pract_trialsRoutineEnd(trials) {
     psychoJS.experiment.addData('pr_emo_resp.corr', pr_emo_resp.corr);
     if (typeof pr_emo_resp.keys !== 'undefined') {  // we had a response
         psychoJS.experiment.addData('pr_emo_resp.rt', pr_emo_resp.rt);
+        routineTimer.reset();
         }
     
     pr_emo_resp.stop();
@@ -2944,14 +2947,16 @@ function trialsRoutineEachFrame(trials) {
       let theseKeys = emo_resp.getKeys({keyList: ['left', 'right'], waitRelease: false});
       _emo_resp_allKeys = _emo_resp_allKeys.concat(theseKeys);
       if (_emo_resp_allKeys.length > 0) {
-        emo_resp.keys = _emo_resp_allKeys[0].name;  // just the first key pressed
-        emo_resp.rt = _emo_resp_allKeys[0].rt;
+        emo_resp.keys = _emo_resp_allKeys[_emo_resp_allKeys.length - 1].name;  // just the last key pressed
+        emo_resp.rt = _emo_resp_allKeys[_emo_resp_allKeys.length - 1].rt;
         // was this correct?
         if (emo_resp.keys == corrResp) {
             emo_resp.corr = 1;
         } else {
             emo_resp.corr = 0;
         }
+        // a response ends the routine
+        continueRoutine = false;
       }
     }
     
@@ -3003,6 +3008,7 @@ function trialsRoutineEnd(trials) {
     psychoJS.experiment.addData('emo_resp.corr', emo_resp.corr);
     if (typeof emo_resp.keys !== 'undefined') {  // we had a response
         psychoJS.experiment.addData('emo_resp.rt', emo_resp.rt);
+        routineTimer.reset();
         }
     
     emo_resp.stop();
